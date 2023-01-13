@@ -10,6 +10,7 @@ Projeto agenda desenvolvido no curso de Javascript e typescript na seção 11 de
 - Node
 - Express
 - MongoDB
+- Webpack
 
 ## Previews
 
