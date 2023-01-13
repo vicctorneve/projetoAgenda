@@ -1,0 +1,82 @@
+<%- include('includes/head')  %> 
+<%- include('includes/nav')  %> 
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Contatos!</h1>
+      <p class="text-center lead">Crie ou edite seu contato abaixo</p>
+
+      <%- include('includes/messages') %> 
+
+      <% if(contato._id) { %> 
+        <form class="formContato"  action="/contato/edit/<%= contato._id %>" method="POST">
+      <% } else { %> 
+        <form class="formContato" action="/contato/register" method="POST">
+      <% } %> 
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="form-group">
+          <label for="inputName">Nome</label>
+        <input 
+          value="<%=contato.nome%>"
+          type="text" 
+          class="form-control" 
+          id="inputName" 
+          aria-describedby="nomeHelp" 
+          placeholder="Digite o nome" 
+          name="nome"
+        >
+        <p class="errorName text-danger my-1"></p>
+        </div>
+        <div class="form-group">
+          <label for="inputLastName">Sobrenome</label>
+          <input 
+            value="<%=contato.sobrenome%>"
+            type="text" 
+            class="form-control" 
+            id="inputLastName" 
+            aria-describedby="nomeHelp" 
+            placeholder="Digite o sobrenome" 
+            name="sobrenome"
+          >
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Email</label>
+          <input 
+            value="<%=contato.email%>"
+            type="email" 
+            class="form-control" 
+            id="inputEmail" 
+            aria-describedby="emailHelp" 
+            placeholder="Digite o email" 
+            name="email"
+          >
+        </div>
+        <p class="errorEmail text-danger my-1"></p>
+        <div class="form-group">
+          <label for="inputPhone">Telefone</label>
+          <input 
+            value="<%=contato.telefone%>"
+            type="tel" 
+            class="form-control" 
+            id="inputPhone" 
+            aria-describedby="phoneHelp" 
+            placeholder="Digite o telefone" 
+            name="telefone"
+          >
+          <p class="errorPhone text-danger my-1"></p>
+        </div>
+        
+        
+        <button type="submit" class="btn btn-primary">Salvar</button>
+       </form>
+
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer')  %> 
