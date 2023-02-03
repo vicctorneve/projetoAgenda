@@ -4,8 +4,7 @@ Projeto agenda desenvolvido no curso de Javascript e typescript na seção 11 de
 
 ## Tecnologias utilizada:
 
-- Html
-- Css
+- Ejs
 - Javascript
 - Node
 - Express
